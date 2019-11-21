@@ -1,39 +1,40 @@
 <template>
-<swiper>
-  <swiper-item v-for="(item,index) in banner" :key="index">
-    <a :href="item.link">
-    <img :src="item.image" alt="">
-    </a>
-  </swiper-item>
-</swiper>
+  <mt-swipe :auto="4000" class="swipe">
+    <mt-swipe-item v-for="(item,index) in banner" :key="index">
+      <a :href="item.link">
+        <img :src="item.image" alt />
+      </a>
+    </mt-swipe-item>
+  </mt-swipe>
 </template>
 
 <script>
-// import {Swiper,SwiperItem} from '../../../components/common/swiper'
-import Swiper from '../../../components/common/swiper/Swiper';
-import SwiperItem from '../../../components/common/swiper/SwiperItem'
+import { Swipe, SwipeItem } from "mint-ui";
 export default {
-  name:'HomeSwiper',
-  props:{
-    banner:{
-    type:Array,
-    default() {
-    return []
+  name: "HomeSwiper",
+  props: {
+    banner: {
+      type: Array,
+      default() {
+        return [];
+      }
     }
-}
   },
-  data(){
-   return {
-
-   }
+  data() {
+    return {};
   },
-  components:{
-      Swiper,
-      SwiperItem
+  components: {
+    Swipe,
+    SwipeItem
   }
-}
+};
 </script>
 
 <style scoped>
-
+.swipe {
+  height: 168px;
+}
+.swipe img {
+  width: 100%;
+}
 </style>
